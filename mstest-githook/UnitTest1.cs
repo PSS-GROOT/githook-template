@@ -13,7 +13,7 @@ namespace mstest_githook
         public void TestCICD()
         {
             
-            Assert.IsTrue(bl.IsCICD());
+            Assert.IsFalse(bl.IsCICD());
         }
     }
 }
