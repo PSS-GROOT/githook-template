@@ -1,0 +1,53 @@
+#!/bin/bash
+current_branch=$(git branch | grep '*' | sed 's/* //')
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# automate directory for different user
+# someVar=$(python -m automate_bash.currentDirectory)
+# echo "$someVar"
+
+# cd "$someVar"
+
+# activate virtual environment
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    source venv/bin/activate
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS
+    source venv/bin/activate
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+    # POSIX compatibility layer and Linux environment emulation for Windows
+    source venv/scripts/activate
+elif [[ "$OSTYPE" == "msys" ]]; then
+    # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+    source venv/scripts/activate
+elif [[ "$OSTYPE" == "win32" ]]; then
+    # I'm not sure this can happen.
+    echo "Use a better OS"
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+    echo "freebsd"
+else
+    # Unknown.
+    echo "what OS are you using?"
+fi
+
+if [[ "$BRANCH" =~ ^(master|main)$ ]]; then
+    echo "You are on branch $BRANCH. Are you sure you want to commit directly to $BRANCH branch?"
+    echo "If you insist on committing, commit with -n to bypass this pre-commit hook."
+    echo "Otherwise, please create a pull request to merge into master branch"
+    exit 1
+
+else
+    echo "You are about to commit to branch $current_branch. pcs-be will run testcases."
+    #python -m unittest discover -s tests -p "test_*.py" -v
+    dotnet test
+    if [ $? -eq 0 ]; then
+        echo '✔ tests passed, proceed to validate commit message'
+
+        exit 0
+    else
+        # some tests failed, prevent from committing broken code on local branch.
+        echo "✖ Some tests failed. You are not allowed to commit broken code to $current_branch! Aborting the commit."
+        echo "Note: you can still commit broken code on feature branches"
+        exit 1
+    fi
+fi

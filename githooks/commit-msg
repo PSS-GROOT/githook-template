@@ -1,0 +1,17 @@
+#!/bin/bash
+
+pattern='^(build|chore|ci|docs|feat|fix|merge|perf|refactor|revert|style|test|BREAKING){1}(\([[:alnum:]._-]+\))?(!)?: ([[:alnum:]])+([[:space:][:print:]]*)'
+commit_msg=$(cat "${1:?Missing commit message file}")
+
+if [[ $commit_msg =~ $pattern ]]; then
+    echo "✔ Valid commit message. You may proceed to push code"
+    exit 0
+else
+    echo "* * * * * * * * * * * * * * * * * * * * * ERROR * * * * * * * * * * * * * * * * * * * * *"
+    echo "ABORTED COMMIT. commit-msg git hook exception: Invalid commit message format - \"$commit_msg\""
+    echo "Please ensure commit message complies with conventional commit format"
+    echo "Commit message structure should be \"<type>(optional scope): <description>\""
+    echo "<type> is one of (build|ci|docs|feat|fix|refactor|style|test|merge|revert|chore|BREAKING)"
+    echo "e.g: \"feat(order): added order interstation flow\" or \"fix: slimy bug\""
+    exit 1
+fi
