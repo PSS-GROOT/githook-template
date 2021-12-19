@@ -7,4 +7,4 @@ Set git hook folder path
 -git config core.hooksPath githooks
 
 # Test
-setestr
+setestrasd
