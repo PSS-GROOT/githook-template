@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D4E48BC4-4D26-4571-BAC0-0CF66AB6EEA6}"
 	ProjectSection(SolutionItems) = preProject
 		readme.MD = readme.MD
+		githooks\commit-msg = githooks\commit-msg
+		githooks\pre-commit = githooks\pre-commit
 	EndProjectSection
 EndProject
 Global
