@@ -15,6 +15,12 @@ build|chore|ci|docs|feat|fix|merge|perf|refactor|revert|style|test|BREAKING
 `
 
 
+# Example output 
+## MacOS
+![Success](MACOS_COMMIT_SUCCESS.png)
+
+![Fail](MACOS_COMMIT_FAIL.png)
+
 
 # Setup Instruction
 Runtime prerequisite
@@ -25,4 +31,6 @@ To set git hook executable folder path
 
 For macOS set right
 - chmod ug+x githooks/*
+
+
 
