@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>test_githook_template</RootNamespace>
+    <RootNamespace>nunittest_githook</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>

@@ -1,20 +1,23 @@
 ﻿using NUnit.Framework;
 using githook_template;
 
-namespace test_githook_template
+namespace nunittest_githook
 {
     public class Tests
     {
+        BusinessLogic bl = null;
+
         [SetUp]
         public void Setup()
         {
+           bl = new BusinessLogic();
         }
 
         [Test]
-        public void TestCICD()
+        public void TestBL()
         {
-            BusinessLogic bl = new BusinessLogic();
             Assert.IsTrue(bl.IsCICD());
+           
         }
     }
 }

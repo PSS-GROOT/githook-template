@@ -7,14 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "githook-template", "githook
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mstest-githook", "mstest-githook\mstest-githook.csproj", "{2C80C047-2D84-4433-BDEB-8B8796525D07}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D4E48BC4-4D26-4571-BAC0-0CF66AB6EEA6}"
-	ProjectSection(SolutionItems) = preProject
-		readme.MD = readme.MD
-		githooks\commit-msg = githooks\commit-msg
-		githooks\pre-commit = githooks\pre-commit
-		MACOS_COMMIT_SUCCESS.png = MACOS_COMMIT_SUCCESS.png
-		MACOS_COMMIT_FAIL.png = MACOS_COMMIT_FAIL.png
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunittest-githook", "nunittest-githook\nunittest-githook.csproj", "{1508744B-DC14-4821-917B-B02CC09169F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +23,10 @@ Global
 		{2C80C047-2D84-4433-BDEB-8B8796525D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C80C047-2D84-4433-BDEB-8B8796525D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C80C047-2D84-4433-BDEB-8B8796525D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1508744B-DC14-4821-917B-B02CC09169F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1508744B-DC14-4821-917B-B02CC09169F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1508744B-DC14-4821-917B-B02CC09169F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1508744B-DC14-4821-917B-B02CC09169F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
