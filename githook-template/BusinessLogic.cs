@@ -8,7 +8,7 @@ namespace githook_template
             IsCICD();
         }
 
-        public Boolean IsCICD() {
+        public bool IsCICD() {
             return true;
         } 
     }
