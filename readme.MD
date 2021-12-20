@@ -6,7 +6,8 @@ b. git hook will not allow you directly commit to master or main unless you add 
 c. git hook will trigger commit-msg to check for the conventional commit message, commit message must follow the sample below.
 
 `
-feat(order): added order interstation flow\" or \"fix: slimy bug\""
+"feat(order): added order interstation flow" or
+"fix: slimy bug"
 `
 
 d. Pattern allowed
