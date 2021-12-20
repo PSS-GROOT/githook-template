@@ -10,16 +10,20 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 # activate virtual environment
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    source venv/bin/activate
+    #source venv/bin/activate'
+    echo linux
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
-    source venv/bin/activate
+    #source venv/bin/activate
+    echo darwin
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     # POSIX compatibility layer and Linux environment emulation for Windows
-    source venv/scripts/activate
+    #source venv/scripts/activate
+    echo cygwin
 elif [[ "$OSTYPE" == "msys" ]]; then
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-    source venv/scripts/activate
+    #source venv/scripts/activate
+    echo msys
 elif [[ "$OSTYPE" == "win32" ]]; then
     # I'm not sure this can happen.
     echo "Use a better OS"
